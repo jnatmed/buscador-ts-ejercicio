@@ -1,6 +1,7 @@
+import producto from "./productos.interfaces";
 
 //TODO: impletentar interface en procutosdb
-const productosdb: = [
+const productosdb = [
 	{
 		id: 1,
 		nombre: 'Leche',
@@ -43,3 +44,15 @@ const productosdb: = [
 // 	nombre: 'Leche',
 // 	precio: 2.99,
 // }
+function buscarPorNombre(name:String) {
+	let product : any = productosdb.find(p => p.nombre == name);
+
+	let prod : producto = {
+		id : product.id,
+		nombre : product.nombre,
+		precio : product.precio
+	}
+	return prod;
+}
+
+export default buscarPorNombre;
