@@ -45,14 +45,18 @@ const productosdb = [
 // 	precio: 2.99,
 // }
 function buscarPorNombre(name:String) {
-	let product : any = productosdb.find(p => p.nombre == name);
+	let product : any = productosdb.find(p => p.nombre.toUpperCase() == name.toUpperCase());	
 
-	let prod : producto = {
-		id : product.id,
-		nombre : product.nombre,
-		precio : product.precio
+	if (product){
+		let prod : producto = {
+			id : product.id,
+			nombre : product.nombre,
+			precio : product.precio
+		}
+		return prod;
+	}else{
+		return false;
 	}
-	return prod;
 }
 
 export default buscarPorNombre;
