@@ -19,7 +19,7 @@ function $create(id : any) : any {
 }
 
 const btnBuscar = $('#buscar-btn')!;
-const resultado = $('#resultado')!;
+const msjerror = $('#msjerror')!;
 const table = $('table');
 btnBuscar.addEventListener('click', (e : Event) => {
 	const nombre_producto : any = document.querySelector<HTMLInputElement>('#buscar-input')?.value!;
@@ -44,7 +44,7 @@ btnBuscar.addEventListener('click', (e : Event) => {
 		res.appendChild(filaDatos);
 		table.appendChild(res);
 	}else{
-
-		resultado.innerHTML = `el elemento ${nombre_producto}, no existe en la base de Datos`;
+		msjerror.className = 'caja rebote';
+		msjerror.innerHTML = `el elemento ${nombre_producto}, no existe en la base de Datos`;
 	}
 });
