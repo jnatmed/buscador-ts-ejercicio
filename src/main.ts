@@ -40,12 +40,9 @@ btnBuscar.addEventListener('click', (e : Event) => {
 		filaDatos.appendChild(celdaId);
 		filaDatos.appendChild(celdaNombre);
 		filaDatos.appendChild(celdaPrecio);
-		console.log(filaDatos);
 		const res : any = $create('tbody');
 		res.appendChild(filaDatos);
-		console.log(res);
 		table.appendChild(res);
-		console.log(table);
 	}else{
 
 		resultado.innerHTML = `el elemento ${nombre_producto}, no existe en la base de Datos`;
